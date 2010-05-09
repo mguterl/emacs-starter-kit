@@ -1,3 +1,6 @@
 [submodule "vendor/cucumber"]
 	path = vendor/cucumber
 	url = http://github.com/michaelklishin/cucumber.el.git
+[submodule "vendor/rhtml"]
+	path = vendor/rhtml
+	url = http://github.com/eschulte/rhtml.git

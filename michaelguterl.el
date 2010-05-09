@@ -1,3 +1,8 @@
+;; add extra directories to path
+(when (equal system-type 'darwin)
+  (setenv "PATH" (concat "/opt/local/bin:/usr/local/bin:" (getenv "PATH")))
+  (push "/opt/local/bin" exec-path))
+
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
 ;; Save backups in one place
@@ -52,7 +57,14 @@
 ;; just nice to have everywhere
 (add-hook 'coding-hook (lambda () (setq tab-width 2)))
 
+;; tell ispell where to find the executable
+(setq ispell-program-name "/opt/local/bin/aspell")
+
 ;; cucumber support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/cucumber"))
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; rhtml support
+(add-to-list 'load-path (concat dotfiles-dir "vendor/rhtml"))
+(require 'rhtml-mode)
