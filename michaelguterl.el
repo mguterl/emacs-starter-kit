@@ -77,3 +77,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "vendor/rspec"))
 (require 'rspec-mode)
 (load "rspec-mode-expectations")
+
+;; ack support
+(require 'ack-emacs)
