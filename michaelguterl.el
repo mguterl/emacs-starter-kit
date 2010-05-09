@@ -60,6 +60,9 @@
 ;; tell ispell where to find the executable
 (setq ispell-program-name "/opt/local/bin/aspell")
 
+;; Bind M-/ to comment-or-uncomment-region
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+
 ;; cucumber support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/cucumber"))
 (require 'feature-mode)
