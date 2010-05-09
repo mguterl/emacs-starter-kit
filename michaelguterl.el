@@ -68,3 +68,7 @@
 ;; rhtml support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/rhtml"))
 (require 'rhtml-mode)
+
+;; haml and sass support
+(require 'haml-mode)
+(require 'sass-mode)
