@@ -72,3 +72,8 @@
 ;; haml and sass support
 (require 'haml-mode)
 (require 'sass-mode)
+
+;; rspec support
+(add-to-list 'load-path (concat dotfiles-dir "vendor/rspec"))
+(require 'rspec-mode)
+(load "rspec-mode-expectations")

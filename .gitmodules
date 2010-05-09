@@ -4,3 +4,6 @@
 [submodule "vendor/rhtml"]
 	path = vendor/rhtml
 	url = http://github.com/eschulte/rhtml.git
+[submodule "vendor/rspec"]
+	path = vendor/rspec
+	url = http://github.com/pezra/rspec-mode.git
