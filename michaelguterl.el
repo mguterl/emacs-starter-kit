@@ -60,8 +60,8 @@
 ;; tell ispell where to find the executable
 (setq ispell-program-name "/opt/local/bin/aspell")
 
-;; Bind M-/ to comment-or-uncomment-region
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+;; Bind M-\ to comment-or-uncomment-region
+(global-set-key (kbd "M-\\") 'comment-or-uncomment-region)
 
 ;; cucumber support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/cucumber"))
@@ -83,3 +83,9 @@
 
 ;; ack support
 (require 'ack-emacs)
+
+;; disable auto-fill-mode in ruby-mode
+(add-hook 'rhtml-mode-hook
+          (function (lambda ()
+                      (auto-fill-mode)
+                      )))
