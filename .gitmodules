@@ -7,3 +7,6 @@
 [submodule "vendor/rspec"]
 	path = vendor/rspec
 	url = http://github.com/pezra/rspec-mode.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = http://github.com/senny/rvm.el.git

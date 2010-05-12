@@ -84,6 +84,10 @@
 ;; ack support
 (require 'ack-emacs)
 
+;; rvm support
+(add-to-list 'load-path (concat dotfiles-dir "vendor/rvm"))
+(require 'rvm)
+
 ;; disable auto-fill-mode in ruby-mode
 (add-hook 'rhtml-mode-hook
           (function (lambda ()
