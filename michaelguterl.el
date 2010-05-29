@@ -55,6 +55,8 @@
 (remove-hook 'coding-hook 'pretty-lambdas)
 
 ;; just nice to have everywhere
+(setq default-tab-width 2)
+(setq tab-width 2)
 (add-hook 'coding-hook (lambda () (setq tab-width 2)))
 
 ;; tell ispell where to find the executable
@@ -87,6 +89,9 @@
 ;; rvm support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/rvm"))
 (require 'rvm)
+
+;; use rvm’s default ruby for the current Emacs session
+(rvm-use-default)
 
 ;; disable auto-fill-mode in ruby-mode
 (add-hook 'rhtml-mode-hook
