@@ -98,3 +98,7 @@
           (function (lambda ()
                       (auto-fill-mode)
                       )))
+
+;; don't try to ping indonesia
+;; http://github.com/technomancy/emacs-starter-kit/issues/issue/39/#comment_323467
+(setq ffap-machine-p-known 'reject)
