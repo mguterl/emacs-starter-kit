@@ -102,3 +102,6 @@
 ;; don't try to ping indonesia
 ;; http://github.com/technomancy/emacs-starter-kit/issues/issue/39/#comment_323467
 (setq ffap-machine-p-known 'reject)
+
+(global-set-key (kbd "C-x C-m") 'compile) ;
+(global-set-key (kbd "C-x C-n") 'next-error) ;
