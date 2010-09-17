@@ -105,3 +105,19 @@
 
 (global-set-key (kbd "C-x C-m") 'compile) ;
 (global-set-key (kbd "C-x C-n") 'next-error) ;
+
+;; textmate mode is required for peepopen
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+
+;; peepopen
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'peepopen)
+(textmate-mode)
+
+;; for some reason I have to manually set this keybinding...
+(define-key *textmate-mode-map* [(meta t)] 'peepopen-goto-file-gui)
+
+;; For Emacs 23 or Aquamacs, use this to open files in the existing frame:
+;;
+(setq ns-pop-up-frames nil)
