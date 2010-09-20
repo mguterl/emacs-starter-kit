@@ -9,7 +9,6 @@
                                    'inf-ruby
                                    'css-mode
                                    'yaml-mode
-                                   'find-file-in-project
                                    'magit
                                    'gist)
   "Libraries that should be installed by default.")
