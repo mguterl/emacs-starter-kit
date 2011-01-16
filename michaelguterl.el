@@ -1,7 +1,7 @@
 ;; add extra directories to path
 (when (equal system-type 'darwin)
   (setenv "PATH" (concat "/opt/local/bin:/usr/local/bin:" (getenv "PATH")))
-  (push "/opt/local/bin" exec-path))
+  (push "/usr/local/bin" exec-path))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
@@ -85,6 +85,7 @@
 
 ;; ack support
 (require 'ack-emacs)
+(setq ack-command "/usr/local/bin/ack")
 
 ;; rvm support
 (add-to-list 'load-path (concat dotfiles-dir "vendor/rvm"))
@@ -121,3 +122,7 @@
 ;; For Emacs 23 or Aquamacs, use this to open files in the existing frame:
 ;;
 (setq ns-pop-up-frames nil)
+
+;; black background
+(require 'color-theme)
+(color-theme-twilight)
