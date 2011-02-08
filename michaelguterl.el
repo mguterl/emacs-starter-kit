@@ -126,3 +126,30 @@
 ;; black background
 (require 'color-theme)
 (color-theme-twilight)
+
+;; CoffeeScript
+(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
+(require 'coffee-mode)
+
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+(defun coffee-custom ()
+  "coffee-mode-hook"
+
+  ;; CoffeeScript uses two spaces.
+  (set (make-local-variable 'tab-width) 2)
+
+  ;; If you don't have js2-mode
+  (setq coffee-js-mode 'javascript-mode)
+
+  ;; Emacs key binding
+  (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+
+  ;; Compile '.coffee' files on every save
+  (add-hook 'after-save-hook
+      '(lambda ()
+         (when (string-match "\.coffee$" (buffer-name))
+          (coffee-compile-file)))))
+
+(add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
