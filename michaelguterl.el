@@ -77,6 +77,8 @@
 (require 'rspec-mode)
 (load "rspec-mode-expectations")
 
+(setq rspec-use-rake-flag nil)
+
 ;; ack support
 (require 'ack-emacs)
 (setq ack-command "/usr/local/bin/ack")
