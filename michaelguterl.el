@@ -120,8 +120,8 @@
 (setq ns-pop-up-frames nil)
 
 ;; black background
-(require 'color-theme)
-(color-theme-twilight)
+(require 'color-theme-solarized)
+(color-theme-solarized-light)
 
 ;; CoffeeScript
 (add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
@@ -142,8 +142,6 @@
   ;; Emacs key binding
   (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
 
-  (setq coffee-command "/usr/local/share/npm/bin/coffee")
-
   ;; Compile '.coffee' files on every save
   (add-hook 'after-save-hook
             '(lambda ()
@@ -151,3 +149,6 @@
                  (coffee-compile-file)))))
 
 (add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
+
+(setq default-frame-alist
+      '((font . "-apple-inconsolata-medium-r-normal--16-160-72-72-m-160-iso10646-1")))
